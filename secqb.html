@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC QB - PDF Downloads</title>
+    <link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kalpurush', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #007BFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            color: #fff;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        td a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #0056b3;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        td a:hover {
+            background-color: #003d80;
+        }
+
+        #accessPrompt {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #errorMessage {
+            color: red;
+            display: none;
+            text-align: center;
+        }
+
+        .get-key-btn {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto 0 auto;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .get-key-btn:hover {
+            background-color: #003d80;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                width: 100%;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>PDF Download Links</h1>
+        <div id="accessPrompt">
+            <label for="accessKeyInput">Enter your Access Key:</label>
+            <input type="text" id="accessKeyInput" placeholder="Access Key">
+            <button onclick="validateAccessKey()">Submit</button>
+            <div id="errorMessage">Invalid Access Key!</div>
+        </div>
+        <div id="downloadSection" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>File Name</th>
+                        <th>Download Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2022-23 [Update].pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1E-9-eH7j1sBmC3Z-P2wpXZU_a-WJ8LmG" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC 2022-23.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1SCMnzcvWYLFptE54eJf7Pph5uv7PSHTc" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC 2021-22.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1D_ayR2d8GgTholkRW87ut36DHIGhkJCG" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC 2020-21.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1D_fPIjshOk8FvumpF3JIJoiWOXqwC42o" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC 2019-20.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1Dz0CehIUXrAP1XYIMp9J7gqhXi1v7b73" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC 2018-19.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1DZ4taNasvYWP-5yKXIeGunL7DaDuZWF9" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC Model Test.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1Dk68ei1KmYZaBjCg2hb_tcYT4qlJDgHs" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>SEC Sample Question.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1DgWRjqsMcv8YPqufbokBtFPeztBbHDrN" target="_blank">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sample Question.pdf</td>
+                        <td><a href="https://drive.google.com/uc?export=download&id=1GTLvTJEosc4qSscmsSxt9Jt6p3OYGnQz" target="_blank">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Button to redirect to index.html -->
+        <a href="index.html" class="get-key-btn">Get Your Access Key</a>
+    </div>
+
+    <script>
+        function validateAccessKey() {
+            const inputKey = document.getElementById('accessKeyInput').value;
+            const storedKey = localStorage.getItem('accessKey');
+
+            if (inputKey === storedKey) {
+                document.getElementById('downloadSection').style.display = 'block'; // Show download links
+                document.getElementById('accessPrompt').style.display = 'none'; // Hide access prompt
+                document.getElementById('errorMessage').style.display = 'none'; // Hide error message
+            } else {
+                document.getElementById('errorMessage').style.display = 'block'; // Show error message
+            }
+        }
+    </script>
+</body>
+</html>

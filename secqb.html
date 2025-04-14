@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEC QB - PDF Downloads</title>
+    <title>SEC Admission PDF Downloads | Question Bank & Model Test</title>
     <link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download SEC Admission Test PDFs, sample questions, model tests and more. Access restricted for authorized users only.">
+    <meta name="keywords" content="SEC, Admission, PDF, Suggestion, Model Test, Download, Question Bank">
+    <meta name="author" content="SEC Insights Team">
+
     <style>
         * {
             margin: 0;
@@ -78,10 +84,28 @@
             margin-bottom: 20px;
         }
 
+        #accessKeyInput {
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin-top: 10px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
         #errorMessage {
-            color: red;
+            color: #ff4d4d;
+            font-weight: bold;
             display: none;
             text-align: center;
+        }
+
+        #loadingMessage {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+            color: #eee;
         }
 
         .get-key-btn {
@@ -103,6 +127,14 @@
             background-color: #003d80;
         }
 
+        #thankYouMsg {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #cce;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -121,10 +153,12 @@
         <h1>PDF Download Links</h1>
         <div id="accessPrompt">
             <label for="accessKeyInput">Enter your Access Key:</label>
-            <input type="text" id="accessKeyInput" placeholder="Access Key">
+            <input type="text" id="accessKeyInput" placeholder="Access Key" autofocus onkeypress="if(event.key === 'Enter') validateAccessKey()">
             <button onclick="validateAccessKey()">Submit</button>
-            <div id="errorMessage">Invalid Access Key!</div>
+            <div id="loadingMessage">Checking access...</div>
+            <div id="errorMessage">❌ Wrong key. Please double-check or contact support.</div>
         </div>
+
         <div id="downloadSection" style="display: none;">
             <table>
                 <thead>
@@ -134,54 +168,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                  								<tr>
-                        <td>Math 1st Paper Suggestion.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1gB5tsg5mnzSDsPxsAULspdT8Nh-em1ZV" target="_blank">Download</a></td>
-                    </tr>
-								<tr>
-                        <td>Physics 1st Paper Suggestion.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1gB__CKB3l6l3iC6R9VI6sFMaMSTk5LI3" target="_blank">Download</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2022-23 [Update].pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1E-9-eH7j1sBmC3Z-P2wpXZU_a-WJ8LmG" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC 2022-23.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1SCMnzcvWYLFptE54eJf7Pph5uv7PSHTc" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC 2021-22.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1D_ayR2d8GgTholkRW87ut36DHIGhkJCG" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC 2020-21.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1D_fPIjshOk8FvumpF3JIJoiWOXqwC42o" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC 2019-20.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1Dz0CehIUXrAP1XYIMp9J7gqhXi1v7b73" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC 2018-19.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1DZ4taNasvYWP-5yKXIeGunL7DaDuZWF9" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC Model Test.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1Dk68ei1KmYZaBjCg2hb_tcYT4qlJDgHs" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>SEC Sample Question.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1DgWRjqsMcv8YPqufbokBtFPeztBbHDrN" target="_blank">Download</a></td>
-                    </tr>
-                    <tr>
-                        <td>Sample Question.pdf</td>
-                        <td><a href="https://drive.google.com/uc?export=download&id=1GTLvTJEosc4qSscmsSxt9Jt6p3OYGnQz" target="_blank">Download</a></td>
-                    </tr>
+                    <!-- Your download list -->
+                    <tr><td>Math 1st Paper Suggestion.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1gB5tsg5mnzSDsPxsAULspdT8Nh-em1ZV" target="_blank">Download</a></td></tr>
+                    <tr><td>Physics 1st Paper Suggestion.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1gB__CKB3l6l3iC6R9VI6sFMaMSTk5LI3" target="_blank">Download</a></td></tr>
+                    <tr><td>2022-23 [Update].pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1E-9-eH7j1sBmC3Z-P2wpXZU_a-WJ8LmG" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC 2022-23.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1SCMnzcvWYLFptE54eJf7Pph5uv7PSHTc" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC 2021-22.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1D_ayR2d8GgTholkRW87ut36DHIGhkJCG" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC 2020-21.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1D_fPIjshOk8FvumpF3JIJoiWOXqwC42o" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC 2019-20.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1Dz0CehIUXrAP1XYIMp9J7gqhXi1v7b73" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC 2018-19.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1DZ4taNasvYWP-5yKXIeGunL7DaDuZWF9" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC Model Test.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1Dk68ei1KmYZaBjCg2hb_tcYT4qlJDgHs" target="_blank">Download</a></td></tr>
+                    <tr><td>SEC Sample Question.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1DgWRjqsMcv8YPqufbokBtFPeztBbHDrN" target="_blank">Download</a></td></tr>
+                    <tr><td>Sample Question.pdf</td><td><a href="https://drive.google.com/uc?export=download&id=1GTLvTJEosc4qSscmsSxt9Jt6p3OYGnQz" target="_blank">Download</a></td></tr>
                 </tbody>
             </table>
         </div>
+
+        <div id="thankYouMsg">✅ Access granted! Happy studying and best of luck! 💪</div>
 
         <!-- Button to redirect to index.html -->
         <a href="index.html" class="get-key-btn">Get Your Access Key</a>
@@ -191,29 +194,37 @@
         function validateAccessKey() {
             const inputKey = document.getElementById('accessKeyInput').value;
             const storedKey = localStorage.getItem('accessKey');
-            const permanentKey = 'teaislove'; // Permanent access key
+            const permanentKey = 'teaislove';
 
-            if (inputKey === storedKey || inputKey === permanentKey) {
-                document.getElementById('downloadSection').style.display = 'block'; // Show download links
-                document.getElementById('accessPrompt').style.display = 'none'; // Hide access prompt
-                document.getElementById('errorMessage').style.display = 'none'; // Hide error message
-            } else {
-                document.getElementById('errorMessage').style.display = 'block'; // Show error message
-            }
+            document.getElementById('loadingMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('thankYouMsg').style.display = 'none';
+
+            setTimeout(() => {
+                if (inputKey === storedKey || inputKey === permanentKey) {
+                    document.getElementById('downloadSection').style.display = 'block';
+                    document.getElementById('accessPrompt').style.display = 'none';
+                    document.getElementById('thankYouMsg').style.display = 'block';
+                } else {
+                    document.getElementById('errorMessage').style.display = 'block';
+                }
+                document.getElementById('loadingMessage').style.display = 'none';
+            }, 800);
         }
     </script>
-	<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/67260c014304e3196adc4d0d/1ibmhij51';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67260c014304e3196adc4d0d/1ibmhij51';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

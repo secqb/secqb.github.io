@@ -110,6 +110,12 @@
             background-color: #003d80;
         }
 
+        #userCount {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 16px;
+        }
+
         .sidebar {
             background-color: #007BFF;
             padding: 20px;
@@ -202,13 +208,16 @@
 
             <div id="accessKeyDisplay" role="alert"></div>
             <button id="redirectButton" onclick="redirectToSecQB()">Go to PDF Downloads</button>
+
+            <!-- ✅ Live user count -->
+            <div id="userCount"></div>
         </div>
 
         <!-- Sidebar Section -->
         <div class="sidebar">
             <h2>ভর্তি পরীক্ষার প্রশ্ন প্যাটার্ন সম্পর্কে গুরুত্বপূর্ণ তথ্য</h2>
             <div class="video-card">
-                <iframe src="https://drive.google.com/file/d/1QVCRWyznr0a0i9rib644OyebleMlKL9H/preview" width="100%" height="315" frameborder="0" allow="autoplay"></iframe>
+                <iframe src="https://drive.google.com/file/d/1QVCRWyznr0a0i9rib644OyebleMlKL9H/preview" allow="autoplay"></iframe>
                 <div class="video-credit">Video Credit: Md Mehedi Hasan Mirraz (CSE-17)</div>
             </div>
         </div>
@@ -249,19 +258,36 @@
             const accessKey = localStorage.getItem('accessKey');
             window.location.href = `secqb.html?accessKey=${accessKey}`;
         }
+
+        // ✅ Live Registration Count
+        const API_URL = 'https://script.google.com/macros/s/AKfycbxWFkNS0Z9I2ZZ88KUYw4WAdf5Z3mubjRWAZkl00OeyW56Fw8oaDaYB5HXm6BKcfguj/exec'; // Replace this with your Apps Script URL
+
+        function fetchUserCount() {
+            fetch(API_URL)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('userCount').innerText = `মোট রেজিস্ট্রেশন: ${data.total} জন`;
+                })
+                .catch(error => {
+                    console.error('Error fetching user count:', error);
+                });
+        }
+
+        fetchUserCount();
+        setInterval(fetchUserCount, 10000);
     </script>
-     <!--Start of Tawk.to Script-->
+
+    <!-- Tawk.to Live Chat -->
     <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/67260c014304e3196adc4d0d/1ibmhij51';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/67260c014304e3196adc4d0d/1ibmhij51';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
         })();
     </script>
-    <!--End of Tawk.to Script-->
 </body>
 </html>
